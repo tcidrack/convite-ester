@@ -13,8 +13,8 @@ export const CONFIG = {
 
   // ── Texto do cartão ────────────────────────────────────────
   quote:
-    '"De las casualidades más bonitas, la amistad inesperada es la que más valoro"',
-  thankYou: "Gracias por asistir",
+    '“Os melhores momentos da vida ficam ainda mais especiais quando compartilhados com pessoas queridas.”',
+  thankYou: "Sua presença é especial",
 
   // ── Imagens ────────────────────────────────────────────────
   // Coloque seus arquivos em /public/images/ e atualize os caminhos abaixo.

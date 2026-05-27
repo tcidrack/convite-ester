@@ -23,7 +23,7 @@ export default function InvitePage() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap');
         * { margin:0; padding:0; box-sizing:border-box; }
         html, body { overflow-x: hidden; }
         body { font-family:'Cormorant Garamond',serif; background:#1a0a0a; min-height:100vh; }
@@ -117,10 +117,10 @@ export default function InvitePage() {
                 </p>
 
                 {/* Foto */}
-                <div style={{ display:"flex", justifyContent:"center", margin:"25px 0 15px" }}>
+                <div style={{ display:"flex", justifyContent:"center", margin:"20px 0 10px" }}>
                   <div style={{
                     width:100, height:120,
-                    borderRadius:"50% 50% 50% 50% / 40% 40% 60% 60%",
+                    borderRadius:"50% 50% 50% 50% / 40% 40% 40% 40%",
                     background:"linear-gradient(135deg,#e8ddd0,#d4c5b0)",
                     display:"flex", flexDirection:"column",
                     alignItems:"center", justifyContent:"center",
@@ -131,7 +131,7 @@ export default function InvitePage() {
                       <img
                         src={images.birthdayPerson}
                         alt={CONFIG.name}
-                        style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"top center" }}
+                        style={{ width:"87%", height:"100%", objectFit:"cover", objectPosition:"top center" }}
                         onError={e => { e.currentTarget.style.display="none"; }}
                       />
                     ) : (
@@ -161,10 +161,41 @@ export default function InvitePage() {
                       <span style={{ fontSize:"1.2rem", width:24, textAlign:"center" }}>{icon}</span>
                       <div>
                         <strong style={{ display:"block", fontSize:"0.75rem", letterSpacing:"1.5px", textTransform:"uppercase", color:"#5c1a1a", fontFamily:"'Cormorant Garamond',serif" }}>{label}</strong>
-                        <span style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"1rem", color:"#6b3a2a" }}>{value}</span>
+                        <span style={{ fontFamily:"'Raleway',sans-serif", fontSize:"0.95rem", fontWeight:500, color:"#6b3a2a" }}>{value}</span>
                       </div>
                     </div>
                   ))}
+                </div>
+
+                {/* Rodízio — Cardápio & Valores */}
+                <div style={{ margin:"0 0 20px", padding:20, background:"rgba(139,38,53,0.05)", borderRadius:12, border:"1px solid rgba(139,38,53,0.12)" }}>
+                  <div style={{ fontSize:"0.75rem", letterSpacing:"1.5px", textTransform:"uppercase", color:"#5c1a1a", fontFamily:"'Cormorant Garamond',serif", fontWeight:700, marginBottom:10, display:"flex", alignItems:"center", gap:8 }}>
+                    Cardápio &amp; Valores
+                  </div>
+
+                  {/* Adulto */}
+                  <div style={{ display:"flex", alignItems:"flex-start", gap:12, padding:"6px 0", borderBottom:"1px solid rgba(139,38,53,0.08)" }}>
+                    <span style={{ fontSize:"1.1rem", width:24, textAlign:"center" }}>🍽️</span>
+                    <div>
+                      <strong style={{ display:"block", fontSize:"0.75rem", letterSpacing:"1px", textTransform:"uppercase", color:"#5c1a1a", fontFamily:"'Cormorant Garamond',serif" }}>Por pessoa</strong>
+                      <span style={{ fontFamily:"'Raleway',sans-serif", fontSize:"1rem", fontWeight:600, color:"#6b3a2a" }}>R$&nbsp;44,90</span>
+                    </div>
+                  </div>
+
+                  {/* Infantil */}
+                  <div style={{ display:"flex", alignItems:"flex-start", gap:12, padding:"6px 0", borderBottom:"1px solid rgba(139,38,53,0.08)" }}>
+                    <span style={{ fontSize:"1.1rem", width:24, textAlign:"center" }}>🧒</span>
+                    <div>
+                      <strong style={{ display:"block", fontSize:"0.75rem", letterSpacing:"1px", textTransform:"uppercase", color:"#5c1a1a", fontFamily:"'Cormorant Garamond',serif" }}>Infantil (4–10 anos) — meia entrada</strong>                    </div>
+                  </div>
+
+                  {/* O que inclui */}
+                  <div style={{ display:"flex", alignItems:"flex-start", gap:12, padding:"6px 0" }}>
+                    <span style={{ fontSize:"1.1rem", width:24, textAlign:"center" }}>🥩</span>
+                    <span style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"0.95rem", color:"#6b3a2a", fontStyle:"italic", lineHeight:1.5 }}>
+                      Buffet livre + massas e espetos passando à vontade!
+                    </span>
+                  </div>
                 </div>
 
                 {/* Botões — padding bottom de 80px garante espaço acima das ondas */}
