@@ -25,6 +25,7 @@ export default function InvitePage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
         * { margin:0; padding:0; box-sizing:border-box; }
+        html, body { overflow-x: hidden; }
         body { font-family:'Cormorant Garamond',serif; background:#1a0a0a; min-height:100vh; }
         @keyframes fadeUp {
           from { opacity:0; transform:translateY(20px); }
@@ -45,6 +46,10 @@ export default function InvitePage() {
           from { opacity:0; transform:scale(0) rotate(var(--rot,0deg)); }
           to   { opacity:1; transform:scale(1) rotate(var(--rot,0deg)); }
         }
+        .card-inner { padding: 50px 40px 80px; position: relative; }
+        @media (max-width: 480px) {
+          .card-inner { padding: 36px 20px 80px; }
+        }
       `}</style>
 
       <div style={{
@@ -63,7 +68,7 @@ export default function InvitePage() {
           data-scroll-container
           style={{
             minHeight:"100vh", display:"flex", alignItems:"flex-start",
-            justifyContent:"center", padding:"50px 24px 70px", overflowY:"auto",
+            justifyContent:"center", padding:"50px 24px 70px", overflowY:"auto", overflowX:"hidden",
           }}
         >
           <div style={{
@@ -89,7 +94,7 @@ export default function InvitePage() {
                 boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
               }}
             >
-              <div style={{ padding:"50px 40px 80px", position:"relative" }}>
+              <div className="card-inner">
 
                 {/* Nome */}
                 <div style={{ fontFamily:"'Pinyon Script',cursive", fontSize:"3.2rem", color:"#8b2635", textAlign:"center", lineHeight:1, marginBottom:2 }}>
@@ -163,7 +168,7 @@ export default function InvitePage() {
                 </div>
 
                 {/* Botões — padding bottom de 80px garante espaço acima das ondas */}
-                <div style={{ display:"flex", gap:12 }}>
+                <div style={{ display:"flex", gap:12, width:"100%", justifyContent:"center" }}>
                   <Btn
                     onClick={() => window.open(CONFIG.mapsUrl, "_blank")}
                     bg="linear-gradient(135deg,#4a4a4a,#2d2d2d)"
