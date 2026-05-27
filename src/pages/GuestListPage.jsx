@@ -110,12 +110,14 @@ export default function GuestListPage() {
 
 function GuestItem({ guest, index }) {
   const isYes = guest.presence === "yes";
+  const text = guest.message || (isYes ? "Estarei lá! 🥂" : "Não poderei ir 🥺");
+
   return (
     <div style={{
       background:"rgba(245,240,232,0.06)",
       border:"1px solid rgba(245,240,232,0.09)",
       borderRadius:14, padding:"14px 18px",
-      display:"flex", alignItems:"center", gap:14,
+      display:"flex", alignItems:"flex-start", gap:14,
       animation:`slideIn 0.4s ease ${index * 0.05}s both`,
     }}>
       {/* Avatar */}
@@ -132,9 +134,10 @@ function GuestItem({ guest, index }) {
       {/* Info */}
       <div style={{ flex:1, minWidth:0 }}>
         <div style={{ color:"#f5f0e8", fontSize:"1rem", fontFamily:"'Cormorant Garamond',serif" }}>{guest.name}</div>
-        <div style={{ color:"#c4957a", fontSize:"0.78rem", marginTop:2, fontStyle:"italic", whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>
-          {guest.message || (isYes ? "Estarei lá! 🥂" : "Não poderei ir 🥺")} · {guest.time}
+        <div style={{ color:"#c4957a", fontSize:"0.78rem", marginTop:2, fontStyle:"italic" }}>
+          {text}
         </div>
+        <div style={{ color:"rgba(196,149,122,0.55)", fontSize:"0.7rem", marginTop:3 }}>{guest.time}</div>
       </div>
 
       {/* Badge */}
